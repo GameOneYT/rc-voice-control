@@ -8,9 +8,6 @@ r = sr.Recognizer()
 
 # Reading Microphone as source
 # listening the speech and store in audio_text variable
-
-
-def front():
     
 
 with sr.Microphone() as source:

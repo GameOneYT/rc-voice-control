@@ -1,34 +1,44 @@
-#import library
-import data
 import speech_recognition as sr
+from turtle import *
+import data
 
-# Initialize recognizer class (for recognizing the speech)
+program_is_running = True  
+
+color('red', 'yellow')
+begin_fill()
+left(90)
 
 r = sr.Recognizer()
 
-# Reading Microphone as source
-# listening the speech and store in audio_text variable
+def checking_word(text):
 
+    global program_is_running
 
-with sr.Microphone() as source:
-    r.adjust_for_ambient_noise(source)
-    print("Talk")
-    audio_text = r.listen(source)
-
-    try:
-        # using google speech recognition
-        output_text = r.recognize_google(audio_text)
-        print("Text: " + output_text)
-    except:
-        print("Sorry, I did not get that")
-
-    if "hello" in output_text:
-        print("Hellollllfvkjdfnkvjfd")
-
-    if output_text in data.forward:
-        print("frontt")
+    text_arr = text.split(" ")
+    
+    for word in text_arr:
+        if word in data.ending_words:
+            program_is_running = False
+            end_fill()
+            done()
+        elif word in data.right_words: 
+            forward(10)
+            right(10)
+        elif word in data.left_words:
+            forward(10)
+            left(10)                 
         
-    elif output_text in data.left:
-        print("left")
-    elif output_text in data.right:
-        print("right")
+while program_is_running:
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source)
+        print("Talk")
+        audio_text = r.listen(source)
+
+        try:
+            recognized_text = r.recognize_google(audio_text, language=data.PROGRAM_LANGUAGE)
+            print("Text: "+recognized_text)
+            checking_word(recognized_text)
+
+        except:
+            print("Sorry, I did not get that")
+

@@ -1,3 +1,6 @@
-front = ["prosto","w przód", "Naprzód", "front"]
+forward = ["prosto", "w przód", "Naprzód", "front", "forward", "up"]
 left = ["lewo", "left"]
 right = ["prawo", "right"]
+backward = ["backward", "down", "do tyłu", "tył", "back"]
+last = ["repeat", "powtorż", "last"]
+stop = ["stop"]

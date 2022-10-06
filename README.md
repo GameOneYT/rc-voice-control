@@ -8,11 +8,12 @@ There are no dependencies required.
 
 ```BASH
 sudo apt update
-sudo apt install python3 python3-pip git python3-pil python3-pil.imagetk -y # Install dependencies
+sudo apt install python3 python3-pip git -y # Install dependencies
 git clone https://github.com/GameOneYT/rc-voice-control
 cd rc-voice-control
 python3 -m pip install -r requirements.txt
 ```
+After doing this, you are good to go with launching the software (e.g. `python3 voiceControl.py`).
 
 Contributors 
 [Denys Melnyk](https://github.com/GameOneYT) i [David Tovmasyan](https://github.com/David-Tovmasyan)

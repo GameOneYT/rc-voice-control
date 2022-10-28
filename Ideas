@@ -1,0 +1,11 @@
+Create Website - Presentation (WP).
+
+WP has a button to download the app, so the user doesn't have to copy our repository from github.
+
+Parallax effect for whole WP.
+
+Experimental/
+As our app is a voice app, we want to add a feature to start downloading with voice too.
+When user says download the app, installation progress will start.
+---
+
